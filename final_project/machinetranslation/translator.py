@@ -1,16 +1,22 @@
 """
 high level support for doing this and that.
 """
-import json
-import os
+# import json
+# import os
+# from ibm_watson import LanguageTranslatorV3
+# from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+# from dotenv import load_dotenv
+
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-from dotenv import load_dotenv
 
-load_dotenv()
 
-apikey = os.environ['apikey']
-url = os.environ['url']
+# load_dotenv()
+
+apikey = "UxfvmpzGlHXK7loIg5sjOGCWweLneBkkG5ehXHRyCl_E"  
+# os.environ['apikey']
+url = "https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/d48d5030-42ac-4346-a0e0-78efb85880f5"
+# os.environ['url']
 
 authenticator = IAMAuthenticator(apikey)
 language_translator = LanguageTranslatorV3(
@@ -21,8 +27,6 @@ language_translator = LanguageTranslatorV3(
 language_translator.set_service_url(url)
 
 language_translator.set_disable_ssl_verification(True)
-
-# Translation functions
 
 def english_to_french(english_text):
     """A dummy docstring."""
